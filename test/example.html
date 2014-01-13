@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Buttonset Example</title>
+    <link rel="stylesheet" type="text/css" href="../build/build.css">
+    <style>
+      .buttonset {
+        font-family: Arial;
+        background-color: #002589;
+        color: white;
+      }
+
+      .buttonset-option {
+        display: inline-block;
+        margin: 5px;
+        padding: 5px 10px;
+        background-color: blue;
+        border: 1px solid white;
+      }
+
+      .buttonset-option {
+        opacity: 0.5;
+      }
+
+      .buttonset-option.disabled {
+        opacity: 0.1;
+      }
+
+      .buttonset-option.active {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Single</h1>
+    <div id="single"></div>
+
+    <h1>Multiple</h1>
+    <div id="multiple"></div>
+
+    <h1>Preset States (active/disabled on init)</h1>
+    <div id="presets"></div>
+
+    <script src="../build/build.js"></script>
+    <script>
+      var Buttonset = require("buttonset");
+
+      // default (i.e. "radio" mode)
+      var single = new Buttonset("#single")
+        .option(1, "Option 1")
+        .option(2, "Option 2")
+        .option(3, "Option 3")
+        .on("change", function () {
+          console.log("single", "change", this.selected());
+        });
+
+      // allow multiple (i.e. "checkbox" mode)
+      var multiple = new Buttonset("#multiple")
+        .multiple()
+        .option(1, "Option 1")
+        .option(2, "Option 2")
+        .option(3, "Option 3")
+        .on("change", function () {
+          console.log("multiple", "change", this.selected());
+        });
+
+      // preset states
+      var presets = new Buttonset("#presets")
+        .multiple()
+        .option(1, "Option 1")
+        .option(2, "Option 2", { disabled: true })
+        .option(3, "Option 3", { disabled: true })
+        .option(4, "Option 4", { active: true })
+        .option(5, "Option 5")
+        .on("change", function () {
+          console.log("presets", "change", this.selected());
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "name": "buttonset",
+  "version": "0.0.0",
+  "devDependencies": {
+    "component": "~0.19.3",
+    "component-test2": "~0.1.2",
+    "component-source": "0.0.1"
+  }
+}

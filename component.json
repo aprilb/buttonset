@@ -1,0 +1,21 @@
+{
+  "name": "buttonset",
+  "repo": "dominicbarnes/buttonset",
+  "version": "0.0.0",
+  "dependencies": {
+    "component/classes": "*",
+    "component/domify": "*",
+    "component/each": "*",
+    "component/emitter": "*",
+    "component/events": "*",
+    "component/value": "*"
+  },
+  "scripts": [
+    "index.js",
+    "lib/list.js",
+    "lib/option.js"
+  ],
+  "styles": [
+    "style.css"
+  ]
+}
