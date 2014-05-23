@@ -52,7 +52,7 @@
         .option(2, "Option 2")
         .option(3, "Option 3")
         .on("change", function () {
-          console.log("single", "change", this.selected());
+          console.log("single", "change", this.value());
         });
 
       // allow multiple (i.e. "checkbox" mode)
@@ -62,7 +62,7 @@
         .option(2, "Option 2")
         .option(3, "Option 3")
         .on("change", function () {
-          console.log("multiple", "change", this.selected());
+          console.log("multiple", "change", this.value());
         });
 
       // preset states
@@ -74,7 +74,7 @@
         .option(4, "Option 4", { active: true })
         .option(5, "Option 5")
         .on("change", function () {
-          console.log("presets", "change", this.selected());
+          console.log("presets", "change", this.value());
         });
     </script>
   </body>
