@@ -38,10 +38,13 @@ presented to the user.
 is an object with 2 possible keys: `disabled` and `active` (each does what you
 expect)
 
-### Buttonset#selected()
+### Buttonset#value([value])
+*Alias: `selected`*
 
 Retrieves the selected options. By default, it will return a single value.
 If `multiple` has been enabled, it will be an `Array` of values.
+
+If a `value` is specified, it will act as a setter instead.
 
 
 ## Events
